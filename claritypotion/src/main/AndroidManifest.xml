@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="zlc.season.claritypotion">
+    <application>
+        <provider
+                android:name=".ClarityPotion"
+                android:exported="false"
+                android:multiprocess="true"
+                android:authorities="${applicationId}.claritypotion"/>
+    </application>
+</manifest>
