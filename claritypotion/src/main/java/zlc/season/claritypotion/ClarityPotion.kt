@@ -1,21 +1,31 @@
 package zlc.season.claritypotion
 
 import android.annotation.SuppressLint
+import android.app.Application
 import android.content.ContentProvider
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.net.Uri
 
+@SuppressLint("StaticFieldLeak")
 class ClarityPotion : ContentProvider() {
 
     companion object {
-        @SuppressLint("StaticFieldLeak")
         lateinit var clarityPotion: Context
+
+        lateinit var healingSalve: Application
+
+        private val activityTracker = ActivityTracker()
+
+        fun tryGetTopActivity() = activityTracker.tryGetTopActivity()
     }
 
     override fun onCreate(): Boolean {
         clarityPotion = context!!
+        healingSalve = clarityPotion.applicationContext as Application
+
+        activityTracker.beginTracking(healingSalve)
         return true
     }
 
@@ -38,7 +48,12 @@ class ClarityPotion : ContentProvider() {
         return 0
     }
 
-    override fun update(uri: Uri, contentValues: ContentValues?, s: String?, strings: Array<String>?): Int {
+    override fun update(
+        uri: Uri,
+        contentValues: ContentValues?,
+        s: String?,
+        strings: Array<String>?
+    ): Int {
         return 0
     }
 }
