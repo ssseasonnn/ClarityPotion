@@ -6,6 +6,6 @@ import zlc.season.claritypotion.ClarityPotion
 class App : Application() {
     override fun onCreate() {
         super.onCreate()
-        println(ClarityPotion.tryGetTopActivity())
+        println(ClarityPotion.currentActivity())
     }
 }

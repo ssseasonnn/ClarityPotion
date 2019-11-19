@@ -12,13 +12,22 @@ import android.net.Uri
 class ClarityPotion : ContentProvider() {
 
     companion object {
+        /**
+         * Get Context at anywhere
+         */
         lateinit var clarityPotion: Context
 
+        /**
+         * Get Application at anywhere
+         */
         lateinit var healingSalve: Application
 
         private val activityTracker = ActivityTracker()
 
-        fun tryGetTopActivity() = activityTracker.tryGetTopActivity()
+        /**
+         * Get current Activity at anywhere, Maybe "null" if there no activity.
+         */
+        fun currentActivity() = activityTracker.tryGetCurrentActivity()
     }
 
     override fun onCreate(): Boolean {

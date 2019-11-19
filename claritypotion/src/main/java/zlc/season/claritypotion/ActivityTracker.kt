@@ -28,7 +28,7 @@ class ActivityTracker {
         application.unregisterActivityLifecycleCallbacks(lifecycleCallbacks)
     }
 
-    fun tryGetTopActivity(): Activity? {
+    fun tryGetCurrentActivity(): Activity? {
         activities.reversed().forEach {
             val activity = it.get()
             if (activity != null) {
@@ -57,14 +57,7 @@ class ActivityTracker {
     private fun <T> removeFromWeakList(
         list: MutableList<WeakReference<T>>, needle: T
     ) {
-        var i = 0
-        val n = list.size
-        while (i < n) {
-            val hay = list[i].get()
-            if (hay === needle) {
-                list.removeAt(i)
-            }
-            i++
-        }
+        val find = list.find { it.get() === needle }
+        list.remove(find)
     }
 }
