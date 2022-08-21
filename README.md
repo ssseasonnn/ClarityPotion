@@ -21,7 +21,7 @@ Step 2. Add the dependency
 ```gradle
 dependencies {
     // replace xyz to latest version number
-    implementation 'com.github.ssseasonnn:ClarityPotion:xyz'
+    implementation 'com.github.ssseasonnn:ClarityPotion:1.0.3'
 }
 ```
 
@@ -32,17 +32,17 @@ Step 3. Usage
 /**
 * Get Context at anywhere
 */
-val context = ClarityPotion.clarityPotion
+val context = ClarityPotion.context
 
 /**
 * Get application at anywhere
 */
-val application = ClarityPotion.healingSalve
+val application = ClarityPotion.application
 
 /**
 * Get current activity at anywhere, maybe "null" if there no activity
 */
-val currentActivity = ClarityPotion.currentActivity()
+val currentActivity = ClarityPotion.activity
 ```
 
 
