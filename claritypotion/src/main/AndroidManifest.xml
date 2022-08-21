@@ -2,7 +2,7 @@
           package="zlc.season.claritypotion">
     <application>
         <provider
-                android:name=".ClarityPotion"
+                android:name=".InitProvider"
                 android:exported="false"
                 android:multiprocess="true"
                 android:authorities="${applicationId}.claritypotion"/>

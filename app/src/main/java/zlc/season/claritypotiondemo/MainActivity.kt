@@ -2,11 +2,9 @@ package zlc.season.claritypotiondemo
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
-import zlc.season.claritypotion.ClarityPotion.Companion.clarityPotion
-import zlc.season.claritypotion.ClarityPotion.Companion.currentActivity
-import zlc.season.claritypotion.ClarityPotion.Companion.healingSalve
+import zlc.season.claritypotion.ClarityPotion
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,13 +12,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        println(clarityPotion.cacheDir)
+        println(ClarityPotion.context.cacheDir)
 
-        println(healingSalve)
+        println(ClarityPotion.application)
 
-        println(currentActivity())
+        println(ClarityPotion.activity)
 
-        btn.setOnClickListener {
+        findViewById<View>(R.id.btn).setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
     }
