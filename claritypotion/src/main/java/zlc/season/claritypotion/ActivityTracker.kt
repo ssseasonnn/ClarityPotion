@@ -28,6 +28,16 @@ class ActivityTracker {
         application.unregisterActivityLifecycleCallbacks(lifecycleCallbacks)
     }
 
+    fun getActivityList(): List<WeakReference<Activity>> {
+        val result = mutableListOf<WeakReference<Activity>>()
+        activities.forEach {
+            if (it.get() != null) {
+                result.add(it)
+            }
+        }
+        return result
+    }
+
     fun tryGetCurrentActivity(): Activity? {
         activities.reversed().forEach {
             val activity = it.get()
