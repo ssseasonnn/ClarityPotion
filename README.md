@@ -21,7 +21,7 @@ Step 2. Add the dependency
 ```gradle
 dependencies {
     // replace xyz to latest version number
-    implementation 'com.github.ssseasonnn:ClarityPotion:1.0.3'
+    implementation 'com.github.ssseasonnn:ClarityPotion:1.0.4'
 }
 ```
 
