@@ -11,8 +11,7 @@ class ActivityTracker {
     private val activities = mutableListOf<WeakReference<Activity>>()
 
     private val lifecycleCallbacks = object : ActivityLifecycleCallbacksAdapter() {
-        override fun onActivityPreCreated(activity: Activity, savedInstanceState: Bundle?) {
-            super.onActivityPreCreated(activity, savedInstanceState)
+        override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
             add(activity)
         }
 
